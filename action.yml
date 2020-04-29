@@ -13,6 +13,18 @@ inputs:
     description: "Path to build file directory relative to root"
     required: true
     default: "build"
+  licensepath: # id
+    description: "Path to project license relative to root"
+    required: true
+    default: "None"
+  readmepath: # id
+    description: "Path to project README file relative to root"
+    required: true
+    default: "README.md"
+  changelogpath: # id
+    description: "Path to project changelog relative to root"
+    required: true
+    default: "CHANGELOG.md"
 outputs:
   projectname:
     description: "Typeface family name"
@@ -20,6 +32,12 @@ outputs:
     description: "path to source file directory relative to root"
   buildpath:
     description: "path to build file directory relative to root"
+  licensepath: # id
+    description: "Path to project license"
+  readmepath: # id
+    description: "Path to project README file"
+  changelogpath: # id
+    description: "Path to project changelog"
 runs:
   using: "node12"
   main: "dist/index.js"

@@ -1,0 +1,25 @@
+name: "Font Project Configuration"
+description: "Set up font project build configuration"
+inputs:
+  projectname: # id
+    description: "Typeface family name"
+    required: true
+    default: "Font"
+  sourcepath: # id
+    description: "Path to source file directory relative to root"
+    required: true
+    default: "src"
+  buildpath: # id
+    description: "Path to build file directory relative to root"
+    required: true
+    default: "build"
+outputs:
+  projectname:
+    description: "Typeface family name"
+  sourcepath: # output will be available to future steps
+    description: "path to source file directory relative to root"
+  buildpath:
+    description: "path to build file directory relative to root"
+runs:
+  using: "node12"
+  main: "dist/index.js"

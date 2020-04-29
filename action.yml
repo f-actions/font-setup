@@ -3,28 +3,32 @@ description: "Set up font project build configuration"
 inputs:
   projectname: # id
     description: "Typeface family name"
-    required: true
+    required: false
     default: "Font"
   sourcepath: # id
     description: "Path to source file directory relative to root"
-    required: true
+    required: false
     default: "src"
   buildpath: # id
     description: "Path to build file directory relative to root"
-    required: true
+    required: false
     default: "build"
   licensepath: # id
     description: "Path to project license relative to root"
-    required: true
+    required: false
     default: "None"
   readmepath: # id
     description: "Path to project README file relative to root"
-    required: true
+    required: false
     default: "README.md"
   changelogpath: # id
     description: "Path to project changelog relative to root"
-    required: true
+    required: false
     default: "CHANGELOG.md"
+  py-version:
+    description: "The Python interpreter version"
+    required: false
+    default: "3.8.2"
 outputs:
   projectname:
     description: "Typeface family name"
@@ -38,6 +42,8 @@ outputs:
     description: "Path to project README file"
   changelogpath: # id
     description: "Path to project changelog"
+  py-version:
+    description: "The Python interpreter version"
 runs:
   using: "node12"
   main: "dist/index.js"

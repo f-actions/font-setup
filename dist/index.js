@@ -59,6 +59,9 @@ async function run() {
   const projectName = core.getInput("projectname");
   const sourcePath = core.getInput("sourcepath");
   const buildPath = core.getInput("buildpath");
+  const licensePath = core.getInput("licensepath");
+  const readmePath = core.getInput("readmepath");
+  const changelogPath = core.getInput("changelogpath");
 
   try {
     console.log(`Configuration of ${projectName} started...`);
@@ -66,6 +69,9 @@ async function run() {
     console.log(`  - projectname: ${projectName}`);
     console.log(`  - sourcepath: ${sourcePath}`);
     console.log(`  - buildpath: ${buildPath}`);
+    console.log(`  - readmepath: ${readmePath}`);
+    console.log(`  - licensepath: ${licensePath}`);
+    console.log(`  - changelogpath: ${changelogPath}`);
     console.log("");
 
     console.log("Exporting values to the build environment...");
@@ -73,6 +79,9 @@ async function run() {
     core.setOutput("projectname", projectName);
     core.setOutput("sourcepath", sourcePath);
     core.setOutput("buildpath", buildPath);
+    core.setOutput("readmepath", readmePath);
+    core.setOutput("licensepath", licensePath);
+    core.setOutput("changelogpath", changelogPath);
 
     console.log("The font-setup Action completed successfully");
   } catch (error) {

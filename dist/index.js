@@ -63,6 +63,8 @@ async function run() {
   const readmePath = core.getInput("readmepath");
   const changelogPath = core.getInput("changelogpath");
   const pyVersion = core.getInput("py-version");
+  const depPath = core.getInput("deppath");
+  const devDepPath = core.getInput("devdeppath");
 
   try {
     console.log(`Configuration of ${projectName} started...`);
@@ -74,6 +76,8 @@ async function run() {
     console.log(`  - licensepath: ${licensePath}`);
     console.log(`  - changelogpath: ${changelogPath}`);
     console.log(`  - py-version: ${pyVersion}`);
+    console.log(`  - deppath: ${depPath}`);
+    console.log(`  - devdeppath: ${devDepPath}`);
     console.log("");
 
     console.log("Exporting values to the build environment...");
@@ -85,6 +89,8 @@ async function run() {
     core.setOutput("licensepath", licensePath);
     core.setOutput("changelogpath", changelogPath);
     core.setOutput("py-version", pyVersion);
+    core.setOutput("deppath", depPath);
+    core.setOutput("devdeppath", devDepPath);
 
     console.log("The font-setup Action completed successfully");
   } catch (error) {

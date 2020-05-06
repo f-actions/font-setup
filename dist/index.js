@@ -94,7 +94,7 @@ async function run() {
 
     console.log("The font-setup Action completed successfully");
   } catch (error) {
-    core.setFailed(`font-setup Action failed with error ${err}`);
+    core.setFailed(`font-setup Action failed with error ${error.message}`);
   }
 }
 

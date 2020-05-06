@@ -2,27 +2,27 @@ name: "Font Project Configuration"
 description: "Set up font project build configuration"
 inputs:
   projectname: # id
-    description: "Typeface family name (optional, default 'Font')"
+    description: "Typeface family name (optional, default='Font')"
     required: false
     default: "Font"
   sourcepath: # id
-    description: "Path to source file directory relative to root (optional, default 'src')"
+    description: "Path to source file directory relative to root (optional, default='src')"
     required: false
     default: "src"
   buildpath: # id
-    description: "Path to build file directory relative to root (optional, default 'build')"
+    description: "Path to build file directory relative to root (optional, default='build')"
     required: false
     default: "build"
   licensepath: # id
-    description: "Path to project license relative to root (optional, default 'None')"
+    description: "Path to project license relative to root (optional, default='None')"
     required: false
     default: "None"
   readmepath: # id
-    description: "Path to project README file relative to root (optional, default 'README.md')"
+    description: "Path to project README file relative to root (optional, default='README.md')"
     required: false
     default: "README.md"
   changelogpath: # id
-    description: "Path to project changelog relative to root (optional, default 'CHANGELOG.md')"
+    description: "Path to project changelog relative to root (optional, default='CHANGELOG.md')"
     required: false
     default: "CHANGELOG.md"
   py-version: # id
@@ -30,13 +30,17 @@ inputs:
     required: false
     default: "3.8.2"
   dependpath: # id
-    description: "Path to build dependency definitions requirements.txt file (optional, default 'requirements.txt')"
+    description: "Path to build dependency definitions requirements.txt file (optional, default='requirements.txt')"
     required: false
     default: "requirements.txt"
   dev-dependpath: # id
-    description: "Path to developer dependency definitions requirements.txt file (optional, default 'dev-requirements.txt')"
+    description: "Path to developer dependency definitions requirements.txt file (optional, default='dev-requirements.txt')"
     required: false
     default: "dev-requirements.txt"
+  buildcommand: # id
+    description: "The build command to produce font artifacts"
+    required: false
+    default: "make"
 outputs:
   projectname:
     description: "Typeface family name"
@@ -56,6 +60,8 @@ outputs:
     description: "Path to build dependency definitions requirements.txt file"
   dev-dependpath: # id
     description: "Path to developer dependency definitions requirements.txt file"
+  buildcommand: # id
+    description: "The build command to produce font artifacts"
 runs:
   using: "node12"
   main: "dist/index.js"

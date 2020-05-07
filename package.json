@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/f-actions/font-setup",
   "dependencies": {
-    "@actions/core": "^1.2.3"
+    "@actions/core": "^1.2.4"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
